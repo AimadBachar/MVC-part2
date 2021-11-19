@@ -54,9 +54,12 @@ class Router
      * @return callable|string
      */
     public function resolve()
-    {
+    {   
+        print_r($this->request);
         $path = $this->request->getPath();
+        var_dump($this->request->getPath());
         $method = $this->request->getMethod();
+        var_dump($method);
         $callback = $this->routes[$method][$path] ?? false;
 
         if (!$callback) {
