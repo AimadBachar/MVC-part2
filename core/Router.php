@@ -2,7 +2,6 @@
 
 namespace App\Core;
 
-use App\Controller\SiteController;
 use App\Core\Request;
 use App\Core\Response;
 
