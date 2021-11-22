@@ -1,4 +1,4 @@
-<h3>Contact us</h3>
+<h3>Connexion</h3>
 <form action="" method="post">
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
