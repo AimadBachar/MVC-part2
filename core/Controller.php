@@ -5,7 +5,7 @@ namespace App\Core;
 use App\Core\Application;
 
 
-abstract class Controller 
+class Controller 
 {   
     /**
      * Ret
