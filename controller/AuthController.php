@@ -5,41 +5,45 @@ namespace App\Controller;
 
 use App\Core\Controller;
 use App\Core\Request;
+use App\models\RegisterModel;
 
 class AuthController extends Controller
 {
     public static function login(Request $request)
     {
-        $body = $request->getBody();
-        echo '<pre>';
-        print_r($body);
-        echo '</pre>';
-    }
-
-    /**
-     * show page
-     * @return void
-     */
-    public static function handleLogin()
-    {
+        if ($request->getMethod() == 'POST') {
+            $body = $request->getBody();
+            echo '<pre>';
+            print_r($body);
+            echo '</pre>';
+            exit;
+        }
         return Controller::renderShowView("login", $data = []);
     }
 
-
-    public static function handleRegister(Request $request)
-    {
-        $body = $request->getBody();
-        echo '<pre>';
-        print_r($body);
-        echo '</pre>';
-    }
-
     /**
      * show page
      * @return void
      */
-    public static function register()
+    public static function register(Request $request)
     {
-        return Controller::renderShowView("register", $data = []);
+        $registerModel = new RegisterModel();
+        if ($request->getMethod() == 'post') {
+
+            $registerModel->loadData($request->getBody());
+
+            if ($registerModel->isValid() && $registerModel->register()) {
+                return 'Success';
+            }
+
+            return Controller::renderShowView("register", [
+                'model' => $registerModel
+            ]);
+
+        }
+        return Controller::renderShowView("register", [
+            'model' => $registerModel
+        ]);
+
     }
 }

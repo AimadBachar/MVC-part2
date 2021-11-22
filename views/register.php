@@ -5,8 +5,8 @@
         <input type="text" class="form-control" name="firstname" id="firstname">
     </div>
     <div class="mb-3">
-        <label for="name" class="form-label">Nom</label>
-        <input type="text" class="form-control" name="name" id="name">
+        <label for="lastname" class="form-label">Nom</label>
+        <input type="text" class="form-control" name="lastname" id="lastname">
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
@@ -17,8 +17,8 @@
         <input type="password" class="form-control" name="password" id="password">
     </div>
     <div class="mb-3">
-        <label for="password2" class="form-label">Confirmer mot de passe</label>
-        <input type="password" class="form-control" name="password2" id="password2">
+        <label for="confirmPassword" class="form-label">Confirmer mot de passe</label>
+        <input type="password" class="form-control" name="confirmPassword" id="confirmPassword">
     </div>
     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
