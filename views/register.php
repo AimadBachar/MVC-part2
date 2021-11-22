@@ -6,7 +6,7 @@ Form::begin('', "post")
 ?>
     <div class="row">
         <div class="col">
-            <?php echo $form->field($model, 'firsname') ?>
+            <?php echo $form->field($model, 'firstname') ?>
         </div>
         <div class="col">
             <?php echo $form->field($model, 'lastname') ?>
