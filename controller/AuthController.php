@@ -6,19 +6,19 @@ namespace App\Controller;
 use App\Core\Controller;
 use App\Core\Request;
 use App\models\RegisterModel;
-use App\models\loginModel;
+use App\models\LoginModel;
 
 
 class AuthController extends Controller
 {
     public static function login(Request $request)
     {
-        $loginModel = new loginModel();
+        $loginModel = new LoginModel();
         if ($request->getMethod() == 'post') {
 
             $loginModel->loadData($request->getBody());
 
-            if ($loginModel->isValid() && $loginModel->connect()) {
+            if ($loginModel->isValid() && $loginModel->login()) {
                 return 'Success';
             }
 
