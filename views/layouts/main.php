@@ -29,6 +29,10 @@
           </li>
         </ul>
       </div>
+      <div class="d-flex">
+        <a class="btn btn-outline-dark" href="/login">Login</a>
+        <a class="btn btn-outline-dark" href="/register">Register</a>
+      </div>
     </div>
   </nav>
 
