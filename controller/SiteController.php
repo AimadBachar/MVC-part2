@@ -3,12 +3,22 @@
 namespace App\Controller;
 
 
+use App\Core\Request;
 use App\Core\Controller;
+use App\Core\Application;
 class SiteController extends Controller
 {
-    public static function handleContact()
+    // public static function handleContact()
+    // {
+    //   var_dump($_POST);
+    // }
+
+    public static function handleContact(Request $request)
     {
-      var_dump($_POST);
+        $body = $request->getBody();
+        echo '<pre>';
+        print_r($body);
+        echo '</pre>';
     }
 
     /**

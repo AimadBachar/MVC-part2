@@ -4,47 +4,42 @@ namespace App\Controller;
 
 
 use App\Core\Controller;
+use App\Core\Request;
+
 class AuthController extends Controller
 {
-    public static function handleLogin()
+    public static function login(Request $request)
     {
-      var_dump($_POST);
+        $body = $request->getBody();
+        echo '<pre>';
+        print_r($body);
+        echo '</pre>';
     }
 
     /**
      * show page
      * @return void
      */
-    public static function login(){
+    public static function handleLogin()
+    {
         return Controller::renderShowView("login", $data = []);
     }
 
 
-    public static function handleRegister()
+    public static function handleRegister(Request $request)
     {
-      var_dump($_POST);
+        $body = $request->getBody();
+        echo '<pre>';
+        print_r($body);
+        echo '</pre>';
     }
 
     /**
      * show page
      * @return void
      */
-    public static function register(){
+    public static function register()
+    {
         return Controller::renderShowView("register", $data = []);
     }
-
-    /**
-     * show page
-     * @return void
-     */
-    public static function welcome(){
-      $params = [
-        'username' => 'toto',
-        'email' => "allll@daada.fr"
-      ];
-    
-      return Controller::renderShowView("welcome", $params);
-      
-    }
-   
 }
