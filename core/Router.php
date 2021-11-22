@@ -73,7 +73,7 @@ class Router
             $callback[0] = new $callback[0]();
         }
 
-        return call_user_func($callback);//va executer les fonctions, accepte class et method (deux argument) accpete une function seul aussi
+        return call_user_func($callback, $this->request);//va executer les fonctions, accepte class et method (deux argument) accpete une function seul aussi
 
     }
 
