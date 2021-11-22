@@ -15,6 +15,8 @@ class Field
     public const TYPE_SUBMIT = 'submit';
     public const TYPE_RADIO = 'radio';
     public const TYPE_CHECKBOX = 'checkbox';
+    public const TYPE_SELECT = 'select';
+    public const TYPE_TEXTAREA = 'textarea';
 
 
     public string $type;
@@ -59,4 +61,5 @@ class Field
         $this->type = self::TYPE_EMAIL;
         return $this;
     }
+
 }

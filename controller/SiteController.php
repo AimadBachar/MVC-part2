@@ -22,7 +22,7 @@ class SiteController extends Controller
 
           $contactModel->loadData($request->getBody());
 
-          if ($contactModel->isValid() && $contactModel->login()) {
+          if ($contactModel->isValid() && $contactModel->contact()) {
               return 'Success';
           }
 
