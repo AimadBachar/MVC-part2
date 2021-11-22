@@ -6,6 +6,8 @@ namespace App\Controller;
 use App\Core\Request;
 use App\Core\Controller;
 use App\Core\Application;
+use App\models\ContactModel;
+
 class SiteController extends Controller
 {
     // public static function handleContact()
@@ -13,20 +15,25 @@ class SiteController extends Controller
     //   var_dump($_POST);
     // }
 
-    public static function handleContact(Request $request)
+    public static function contact(Request $request)
     {
-        $body = $request->getBody();
-        echo '<pre>';
-        print_r($body);
-        echo '</pre>';
-    }
+      $contactModel = new ContactModel();
+      if ($request->getMethod() == 'post') {
 
-    /**
-     * show page
-     * @return void
-     */
-    public static function contact(){
-        return Controller::renderShowView("contact", $data = []);
+          $contactModel->loadData($request->getBody());
+
+          if ($contactModel->isValid() && $contactModel->login()) {
+              return 'Success';
+          }
+
+          return Controller::renderShowView("contact", [
+              'model' => $contactModel
+          ]);
+
+      }
+      return Controller::renderShowView("contact", [
+          'model' => $contactModel
+      ]);
     }
 
     /**
