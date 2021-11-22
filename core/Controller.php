@@ -8,7 +8,7 @@ use App\Core\Application;
 class Controller 
 {   
     /**
-     * Ret
+     * 
      */
     public static function renderShowView(string $view,array $data = [])
     {
