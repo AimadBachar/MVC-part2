@@ -6,7 +6,7 @@ Form::begin('', "post")
 ?>
     <?php echo $form->field($model, 'email')->emailField() ?>
     <?php echo $form->field($model, 'password')->passwordField() ?>
-    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+    <button type="submit" class="btn btn-primary" name="submitLogin">Submit</button>
 <?php  
 Form::end(); 
 ?>
