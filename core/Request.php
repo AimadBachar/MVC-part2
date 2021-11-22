@@ -37,6 +37,10 @@ class Request
         $body = [];
         if ($this->getMethod() === 'post') {
             foreach ($_POST as $key => $value) {
+                if ($key == 'email') {
+                    $body['email'] = filter_var($key, FILTER_SANITIZE_EMAIL);
+                    $body['email'] = filter_var($key, FILTER_VALIDATE_EMAIL);
+                }
                 $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
