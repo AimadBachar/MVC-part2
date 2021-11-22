@@ -1,7 +1,8 @@
 <h3>Inscription</h3>
 <?php 
-use App\Core\form;
-$form = Form::begin('', "post") 
+use App\core\form\Form;
+$form = new Form();
+Form::begin('', "post") 
 ?>
     <div class="row">
         <div class="col">

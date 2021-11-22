@@ -1,8 +1,10 @@
 <?php 
 
-namespace App\Core;
+namespace App\core\form;
+
 
 use App\Core\Model;
+
 
 class Form 
 {
@@ -14,7 +16,7 @@ class Form
 
     public static function end()
     {
-        return '</form>';
+        echo '</form>';
     }	
 
     public function field(Model $model, $attribute) 
