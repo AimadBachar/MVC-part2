@@ -9,7 +9,7 @@ class LoginModel extends Model
     public string $email = '';
     public string $password = '';
 
-    public function connect()
+    public function login()
     {
         // création d'un user en base de donnée
         echo "You are connected";
