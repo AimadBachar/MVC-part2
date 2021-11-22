@@ -55,11 +55,10 @@ class Router
      */
     public function resolve()
     {   
-        print_r($this->request);
+        
         $path = $this->request->getPath();
-        var_dump($this->request->getPath());
         $method = $this->request->getMethod();
-        var_dump($method);
+        
         $callback = $this->routes[$method][$path] ?? false;
 
         if (!$callback) {
@@ -69,6 +68,10 @@ class Router
 
         if (is_string($callback)) {
             return $this->renderView($callback);    
+        }
+
+        if (is_array($callback)) {
+            $callback[0] = new $callback[0]();
         }
 
         return call_user_func($callback);//va executer les fonctions, accepte class et method (deux argument) accpete une function seul aussi
