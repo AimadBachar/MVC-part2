@@ -8,13 +8,17 @@ use App\Core\Controller;
 use App\Core\Application;
 use App\models\ContactModel;
 
+/**
+ * Class ContactController
+ * @package App\Controller
+ */
 class SiteController extends Controller
 {
-    // public static function handleContact()
-    // {
-    //   var_dump($_POST);
-    // }
-
+    /**
+     * show page contact and controll if registration is valid
+     * @param Request $request
+     * @return view
+     */
     public static function contact(Request $request)
     {
       $contactModel = new ContactModel();
@@ -37,8 +41,8 @@ class SiteController extends Controller
     }
 
     /**
-     * show page
-     * @return void
+     * show page welcome
+     * @return view
      */
     public static function welcome(){
       $params = [
