@@ -23,6 +23,11 @@ class Field
     public Model $model;
     public string $attribute;
     
+    /**
+     * @param Model $model
+     * @param string $attribute
+     * @return void
+     */
     public function __construct(Model $model, $attribute)
     {   
         $this->type = self::TYPE_TEXT;
@@ -30,6 +35,9 @@ class Field
         $this->attribute = $attribute;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return sprintf('
@@ -50,12 +58,20 @@ class Field
 
     }
 
+    /**
+     * @param string $type
+     * @return Object Field
+     */
     public function passwordField()
     {
         $this->type = self::TYPE_PASSWORD;
         return $this;
     }
 
+    /**
+     * @param string $type
+     * @return Object Field
+     */
     public function emailField()
     {
         $this->type = self::TYPE_EMAIL;
