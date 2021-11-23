@@ -10,7 +10,7 @@ $dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
 
-phpinfo();
+
 
 $config = [
     'db' => [
